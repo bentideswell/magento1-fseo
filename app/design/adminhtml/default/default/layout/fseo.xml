@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<layout>
+	<adminhtml_fseo_index>
+		<reference name="content">
+			<block type="core/text" name="fseo_layer.title">
+				<action method="setText">
+					<text><![CDATA[<div class="content-header"><h3>Manage Layered Navigation</h3></div>]]></text>
+				</action>
+			</block>
+			<block type="fseo/adminhtml_dashboard" name="fseo.dashboard" />
+			<block type="core/text" name="fseo.dashboard.tabs.content">
+				<action method="setText">
+					<text><![CDATA[
+						<div id="fseo_dashboard_tab_content"></div>
+						<style type="text/css">
+							#fseo_layer_tabs_adminhtml_catalog_layer_page_content .content-header { display: none; }
+						</style>
+					]]></text>
+				</action>
+			</block>
+		</reference>
+	</adminhtml_fseo_index>
+	<!--
+	/**
+	 *
+	 */
+	 -->
+	 <adminhtml_fseo_catalog_layer_edit>
+	 	<reference name="content">
+	 		<block type="fseo/adminhtml_catalog_layer_page_edit" name="fseo.catalog_layer.page.edit" />
+	 	</reference>
+	 	<reference name="left">
+	 		<block type="fseo/adminhtml_catalog_layer_page_edit_tabs" name="fseo.catalog_layer.page.edit.tabs" />
+	 	</reference>
+	 	<reference name="before_body_end">
+	 		<block type="core/text" name="fseo.catalog_layer.page.jss">
+	 			<action method="setText">
+	 				<text><![CDATA[
+		 				<script type="text/javascript">$$('.fieldset-wide .form-list td.value p.note').invoke('setStyle', {width: '95%'});</script>
+		 			]]></text>
+		 		</action>
+	 		</block>
+	 	</reference>
+	 </adminhtml_fseo_catalog_layer_edit>
+</layout>

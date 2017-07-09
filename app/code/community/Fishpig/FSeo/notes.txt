@@ -1,0 +1,63 @@
+/**
+ * @category Fishpig
+ * @package Fishpig_FSeo
+ * @license http://fishpig.co.uk/license.txt
+ * @author Ben Tideswell <ben@fishpig.co.uk>
+ */
+
+27/05/2017 - v1.1.0.3
+- Added support for characters with accents when generating URL keys
+
+22/05/2017 - v1.1.0.2
+- Fixed Clear All URL for categories. Parent category URL is now returned.
+
+20/05/2017 - v1.1.0.0
+- Added auto template creation configuration option.
+
+17/07/2015 - v1.0.0.18
+- Added option (enabled by default) to show applied category filters in the layered navigation
+
+09/03/2015 - v1.0.0.17
+- Added apply_to field to pages
+
+09/03/2015 - v1.0.0.16
+- Added body classes when FSeo is applied
+
+25/11/2014 - v1.0.0.15
+- Added better ACL options
+
+30/10/2014 - v1.0.0.14
+- Added default entity description field
+
+29/10/2014 - v1.0.0.12
+- Fixed bug that stopped Adminhtml grid from working for Templates
+
+21/10/2014 - v1.0.0.11
+- Fixed checkbox bug in Chrome and added massDelete action
+
+01/10/2014 - v1.0.0.10
+- Added the 'remove' parameter to variables
+- Added ability to enable/disable attributes for SEO urls in layered navigation
+
+24/09/2014 - v1.0.0.7
+- Added '**' for object selector. This selects multiple levels of objects (as well as single).
+
+24/09/2014 - v1.0.0.6
+- Added default page template values for title, meta descrition and entity name
+
+23/09/2014 - v1.0.0.5
+- Fixed early session instantiation bug
+
+16/09/2014 - v1.0.0.4
+- Fix for the canonical URL
+
+15/08/2014 - v1.0.0.3
+- Fixed issue that caused wrong object selection and led to 404
+
+02/08/2014 - v1.0.0.1
+- Added small fix to disable on Splash Pages
+
+30/07/2014 - v1.0.0.0
+- First stable release of FSeo.
+- Contains layered navigation support for catalog_category and attributeSplash_page
+- Will soon 

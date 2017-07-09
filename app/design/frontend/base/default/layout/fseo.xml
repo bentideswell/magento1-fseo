@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<layout>
+	<!--/**
+	 * Apply this handle to any page with layered navigation
+	 *
+	 */-->
+	<fseo_layered_navigation>
+		<reference name="root">
+			<block type="fseo/layout" name="fseo.layout" after="-" />
+		</reference>
+		<reference name="head">
+			<action method="addJs"><script>fishpig/fseo/catalog/layer.js</script></action>
+		</reference>
+		<reference name="before_body_end">
+			<block type="fseo/catalog_layer_js" name="fseo.catalog.js.layer" template="fseo/catalog/layer/js.phtml">
+				<action method="setLayeredNavigationHtmlId"><id>narrow-by-list</id></action>
+			</block>
+		</reference>
+	</fseo_layered_navigation>
+	<!--/**
+	  * Pages that use the layered navigation handle (defined above)
+	  *
+	  */-->	
+	<catalog_category_layered>
+		<update handle="fseo_layered_navigation" />
+	</catalog_category_layered>
+	<attributesplash_page_view>
+		<update handle="fseo_layered_navigation" />
+	</attributesplash_page_view>
+	<splash_page_view>
+		<update handle="fseo_layered_navigation" />	
+	</splash_page_view>
+	<!--/**
+	 * End of layout file
+	 */-->
+</layout>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<fseo>
+			<title>SEO</title>
+			<action>adminhtml/fseo</action>
+			<sort_order>45</sort_order>
+			<children>
+				<templates>
+					<title>Manage Templates</title>
+					<action>adminhtml/fseo</action>
+					<sort_order>1</sort_order>
+				</templates>
+				<configuration>
+					<title>Configuration</title>
+					<action>adminhtml/system_config/edit/section/fseo</action>
+					<sort_order>6</sort_order>
+				</configuration>
+			</children>
+		</fseo>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<fseo>
+						<children>
+							<fseo>
+								<title>FishPig SEO</title>
+								<sort_order>6</sort_order>
+								<children>
+									<templates>
+										<title>Manage Templates</title>
+										<sort_order>1</sort_order>
+									</templates>
+									<configuration>
+										<title>Configuration</title>
+										<sort_order>6</sort_order>
+									</configuration>
+								</children>
+							</fseo>
+						</children>
+					</fseo>
+					<system>
+						<children>
+							<config>
+								<children>
+									<fseo>
+										<title>FishPig SEO</title>
+										<sort_order>990</sort_order>
+									</fseo>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>
