@@ -286,12 +286,11 @@ class Fishpig_FSeo_Helper_Layer extends Mage_Core_Helper_Abstract
 	 * @return 
 	 **/
 	public function formatUrlKey($s)
-	{
-		return Mage::getSingleton('catalog/product_url')->formatUrlKey($s);
-		
+	{	
 		$s = preg_replace('/([0-9]{1,})"/', '$1 Inch', $s);
 		$s = str_replace(array("'"), '', $s);
-		
+
+		return Mage::getSingleton('catalog/product_url')->formatUrlKey($s);		
 		return trim(preg_replace('/([^_a-z0-9-]{1,})/', '-', strtolower($s)), '-');
 	}
 	

@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Fishpig_FSeo>
-			<version>1.1.0.6</version>
+			<version>1.1.0.7</version>
 		</Fishpig_FSeo>
 	</modules>
 	<global>

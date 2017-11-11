@@ -1,5 +1,5 @@
 <_>
-   <form_key>hKuKTkYG8o2GrPl5</form_key>
+   <form_key>5RJb5b0G9jrUzorh</form_key>
    <name>Fishpig_FSeo</name>
    <channel>community</channel>
    <version_ids>
@@ -9,7 +9,7 @@
    <description>SEO layered navigation.</description>
    <license>FishPig EULA</license>
    <license_uri>http://fishpig.co.uk/license.txt</license_uri>
-   <version>1.1.0.6</version>
+   <version>1.1.0.7</version>
    <stability>stable</stability>
    <notes>For changes, please see https://fishpig.co.uk/magento/extensions/seo-layered-navigation/#changelog</notes>
    <authors>
@@ -40,7 +40,7 @@
             <max/>
          </max>
          <files>
-            <files>                                 </files>
+            <files>                                  </files>
          </files>
       </package>
       <extension>
