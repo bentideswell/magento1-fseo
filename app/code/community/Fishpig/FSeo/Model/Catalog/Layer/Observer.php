@@ -40,6 +40,10 @@ class Fishpig_FSeo_Model_Catalog_Layer_Observer
 	 */
 	public function injectCanonicalTagObserver(Varien_Event_Observer $observer)
 	{
+		if (!Mage::registry('fseo_layer_applied_filter_data')) {
+			return $this;
+		}
+		
 		if (!($page = Mage::helper('fseo/layer')->getAppliedPage())) {
 			return $this;
 		}
