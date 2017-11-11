@@ -30,7 +30,55 @@ class Fishpig_FSeo_Model_Catalog_Layer_Observer
 
 		return $this;
 	}
-	
+
+	/*
+	 * Inject the canonical tag and remove any existing canonicals
+	 *
+	 *
+	 * @param Varien_Event_Observer $observer
+	 * @return $this
+	 */
+	public function injectCanonicalTagObserver(Varien_Event_Observer $observer)
+	{
+		if (!($page = Mage::helper('fseo/layer')->getAppliedPage())) {
+			return $this;
+		}
+
+		if (!($canonicalUrl = $page->getCanonicalUrl())) {
+			return $this;
+		}
+		
+		$html = $observer->getEvent()->getFront()->getResponse()->getBody();
+		
+		if (strpos($html, 'canonical') !== false) {
+			if (!preg_match_all('/<link[^>]+>/', $html, $matches)) {
+				// Canonical exists but cannot match it
+				exit('no match');
+				return $this;
+			}
+			
+			$actualMatches = array();
+			
+			foreach($matches[0] as $match) {
+				if (strpos($match, 'canonical') !== false) {
+					$actualMatches[] = $match;
+				}
+			}
+			
+			if (count($actualMatches) === 0) {
+				return $this;
+			}
+			
+			foreach($actualMatches as $existingCanonicalTag) {
+				$html = str_replace($existingCanonicalTag, '', $html);
+			}
+		}
+		
+		$html = str_replace('</head>', '<link rel="canonical" href="' . $canonicalUrl . '"/></head>', $html);
+
+		$observer->getEvent()->getFront()->getResponse()->setBody($html);
+	}
+
 	/**
 	 * Retrieve the helper object
 	 *

@@ -57,6 +57,12 @@ class Fishpig_FSeo_Block_Adminhtml_Catalog_Layer_Page_Edit_Tab_Attributes extend
 			'title' 	=> $this->__('Page Title'),
 		));
 		
+		$fieldset->addField('canonical_url', 'text', array(
+			'name' 		=> 'canonical_url',
+			'label' 	=> $this->__('Canonical URL'),
+			'title' 	=> $this->__('Canonical URL'),
+		));
+		
 		$fieldset->addField('meta_description', 'editor', array(
 			'name' 		=> 'meta_description',
 			'label' 	=> $this->__('Description'),

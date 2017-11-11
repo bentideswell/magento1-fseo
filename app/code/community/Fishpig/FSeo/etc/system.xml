@@ -1,10 +1,27 @@
 <?xml version="1.0"?>
 <config>
+	<tabs>
+		<fishpig>
+			<label>FishPig</label>
+			<sort_order>200</sort_order>
+		</fishpig>
+	</tabs>
     <sections>
-        <fseo>
+        <fseo translate="label" module="fseo">
+            <label>SEO</label>
+            <tab>fishpig</tab>
+            <sort_order>698</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
             <groups>
-            	<xmlsitemap>
-            		<label>XML Sitemap</label>
+            	<layer>
+            		<label>Layered Navigation</label>
+            		<comment><![CDATA[
+						<script type="text/javascript">
+							$$('#content .content-header h3').first().update('FishPig SEO');
+						</script>
+            		]]></comment>
             		<sort_order>1</sort_order>
             		<show_in_default>1</show_in_default>
             		<show_in_website>1</show_in_website>
@@ -12,15 +29,107 @@
             		<fields>
             			<enabled>
             				<label>Enabled</label>
-            				<frontend_type>select</frontend_type>
-            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<frontend_type>multiselect</frontend_type>
+            				<source_model>fseo/system_config_source_catalog_layer_entity</source_model>
             				<sort_order>1</sort_order>
             				<show_in_default>1</show_in_default>
             				<show_in_website>1</show_in_website>
             				<show_in_store>1</show_in_store>
             			</enabled>
+            			<auto_create_templates>
+            				<label>Auto-Create Templates</label>
+            				<comment>If Enabled, templates will automatically be created for each page that gets visited. These pages will be disabled but can be enabled.</comment>
+            				<frontend_type>select</frontend_type>
+            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>2</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</auto_create_templates>
+            			<default_title>
+            				<label>Default Title Template</label>
+            				<comment>Use {entity} for the category (or Splash Page) name and use {filter} for the filter names.</comment>
+            				<frontend_type>textarea</frontend_type>
+            				<sort_order>6</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</default_title>
+            			<default_meta_description>
+            				<label>Default Meta Description Template</label>
+            				<comment>Use {entity} for the category (or Splash Page) name and use {filter} for the filter names.</comment>
+            				<frontend_type>textarea</frontend_type>
+            				<sort_order>11</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</default_meta_description>
+            			<default_entity_name>
+            				<label>Default Entity Name Template</label>
+            				<comment>Use {entity} for the category (or Splash Page) name and use {filter} for the filter names.</comment>
+            				<frontend_type>text</frontend_type>
+            				<sort_order>16</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</default_entity_name>
+            			<default_entity_description>
+            				<label>Default Description Template</label>
+            				<comment>Use {entity} for the category (or Splash Page) name and use {filter} for the filter names.</comment>
+            				<frontend_type>textarea</frontend_type>
+            				<sort_order>21</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</default_entity_description>
+            			<use_all_attributes>
+            				<label>Use All Attributes</label>
+            				<frontend_type>select</frontend_type>
+            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>41</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</use_all_attributes>
+            			<use_specific_attributes>
+            				<label>Use Specific Attributes</label>
+            				<frontend_type>multiselect</frontend_type>
+            				<source_model>fseo/system_config_source_catalog_product_attributes</source_model>
+            				<sort_order>46</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            				<depends><use_all_attributes>0</use_all_attributes></depends>
+            			</use_specific_attributes>
+            			<show_applied_category_filters>
+            				<label>Show Applied Category Filters</label>
+            				<frontend_type>select</frontend_type>
+            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>51</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</show_applied_category_filters>
+            			<multiselect>
+            				<label>Allow Selecting Multiple Options</label>
+            				<frontend_type>select</frontend_type>
+            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>56</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</multiselect>
+            			<try_to_redirect>
+            				<label>Try to Redirect Old URLs to New</label>
+            				<frontend_type>select</frontend_type>
+            				<source_model>adminhtml/system_config_source_yesno</source_model>
+            				<sort_order>61</sort_order>
+            				<show_in_default>1</show_in_default>
+            				<show_in_website>1</show_in_website>
+            				<show_in_store>1</show_in_store>
+            			</try_to_redirect>
             		</fields>
-            	</xmlsitemap>
+            	</layer>
             </groups>
         </fseo>
     </sections>

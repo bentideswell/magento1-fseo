@@ -25,32 +25,72 @@ class Fishpig_FSeo_Model_Catalog_Layer_Page extends Mage_Core_Model_Abstract
 	{
 		$this->_init('fseo/catalog_layer_page');
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getName()
 	{
 		return $this->processVariables($this->getAttributeValue('name'));
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getDescription()
 	{
 		return $this->processVariables($this->getAttributeValue('description'));
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getPageTitle()
 	{
 		return $this->processVariables($this->getAttributeValue('page_title'));
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getMetaDescription()
 	{
 		return $this->processVariables($this->getAttributeValue('meta_description'));
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getMetaKeywords()
 	{
 		return $this->processVariables($this->getAttributeValue('meta_keywords'));
 	}
-	
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
+	public function getCanonicalUrl()
+	{
+		return $this->processVariables($this->getAttributeValue('canonical_url'));
+	}
+
+	/*
+	 *
+	 *
+	 * @return string
+	 */
 	public function getAttributeValue($attribute)
 	{
 		$attributes = $this->getAttributes();
