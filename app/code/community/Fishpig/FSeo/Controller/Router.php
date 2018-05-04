@@ -228,7 +228,8 @@ class Fishpig_FSeo_Controller_Router extends Mage_Core_Controller_Varien_Router_
 	{
 		$tokenParts = explode(',', array_shift($tokens));
 		$helper = Mage::helper('fseo/layer');
-
+		$isMultiselectAllowed = Mage::helper('fseo/layer')->isMultiselectAllowed();
+		
 		foreach($attributes as $attributeKey => $attribute) {
 			if (!Mage::helper('fseo/layer')->isAttributeEnabled($attribute->getAttributeCode())) {
 				continue;
@@ -243,6 +244,17 @@ class Fishpig_FSeo_Controller_Router extends Mage_Core_Controller_Varien_Router_
 			);
 
 			foreach($attribute->getPrunedOptions() as $option) {
+				
+				// If Multiselect disabled and more than 1 token part, return false
+				if (!$isMultiselectAllowed && count($tokenParts) > 1) {
+					return false;
+				}
+				
+				// The token parts contains duplicates
+				if (count($tokenParts) !== count(array_unique($tokenParts))) {
+					return false;
+				}
+				
 				foreach($tokenParts as $tokenKey => $token) {
 					if (($optionSlug = $helper->formatUrlKey($option['label'])) !== $token) {
 						continue;

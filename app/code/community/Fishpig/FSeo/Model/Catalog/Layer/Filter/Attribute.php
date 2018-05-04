@@ -57,7 +57,7 @@ class Fishpig_FSeo_Model_Catalog_Layer_Filter_Attribute extends Mage_Catalog_Mod
 			return $data;
 		}
 
-		if (!Mage::getStoreConfigFlag('fseo/layer/multiselect')) {
+		if (!Mage::helper('fseo/layer')->isMultiselectAllowed()) {
 			return array();
 		}
 

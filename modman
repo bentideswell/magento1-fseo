@@ -3,4 +3,3 @@ app/design/adminhtml/default/default/layout/fseo.xml app/design/adminhtml/defaul
 app/design/frontend/base/default/layout/fseo.xml app/design/frontend/base/default/layout/fseo.xml
 app/etc/modules/Fishpig_FSeo.xml app/etc/modules/Fishpig_FSeo.xml
 js/fishpig/fseo js/fishpig/fseo
-var/connect/Fishpig_FSeo.xml var/connect/Fishpig_FSeo.xml

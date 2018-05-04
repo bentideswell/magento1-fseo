@@ -408,4 +408,14 @@ class Fishpig_FSeo_Helper_Layer extends Mage_Core_Helper_Abstract
 		
 		return false;
 	}
+	
+	/*
+	 * Is Multiselect allowed
+	 *
+	 * @return bool
+	 */
+	public function isMultiselectAllowed()
+	{
+		return Mage::getStoreConfigFlag('fseo/layer/multiselect');
+	}
 }
